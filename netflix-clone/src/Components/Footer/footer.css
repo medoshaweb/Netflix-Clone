@@ -1,0 +1,63 @@
+/* Netflix-style Footer */
+.nf-footer {
+  background: #141414;
+  color: #737373;
+  padding: 40px 4vw;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.nf-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Social Icons */
+.nf-social {
+  margin-bottom: 20px;
+}
+.nf-social a {
+  color: #737373;
+  margin-right: 20px;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+.nf-social a:hover {
+  color: #fff;
+}
+
+/* Link Grid */
+.nf-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  gap: 12px 0;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.nf-links a {
+  text-decoration: none;
+  color: #737373;
+}
+.nf-links a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Copy */
+.nf-copy {
+  font-size: 0.8rem;
+  color: #737373;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .nf-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .nf-links {
+    grid-template-columns: 1fr;
+  }
+}

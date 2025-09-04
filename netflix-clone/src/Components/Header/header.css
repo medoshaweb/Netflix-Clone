@@ -4,6 +4,7 @@
   color: #e5e5e5;
   display: flex;
   justify-content: space-between;
+  /* background-color: transparent; */
   align-items: center;
   padding: 12px 40px;
   position: sticky;
@@ -13,6 +14,7 @@
 
 /* Left Navigation */
 .nav-left ul {
+  align-items: center;
   list-style: none;
   display: flex;
   gap: 20px;
