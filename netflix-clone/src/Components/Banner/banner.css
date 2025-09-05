@@ -99,3 +99,12 @@
   background: linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #111);
   z-index: 1;
 }
+/* Description */
+.banner-description {
+  width: 45rem;
+  max-width: 50%;
+  line-height: 1.3;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  max-height: 80px;
+}

@@ -4,7 +4,6 @@
   color: #e5e5e5;
   display: flex;
   justify-content: space-between;
-  /* background-color: transparent; */
   align-items: center;
   padding: 12px 40px;
   position: sticky;
@@ -15,6 +14,15 @@
   background-color: transparent !important;
   transition: background-color 0.3s ease-in-out;
 }
+  .menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  color: #e5e5e5;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 
 /* Left Navigation */
 .nav-left ul {
@@ -93,6 +101,8 @@
     align-items: flex-start;
     padding: 10px 20px;
   }
+.menu-toggle {
+    display: block;
 
   .nav-left ul,
   .nav-right ul {
