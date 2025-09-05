@@ -4,7 +4,7 @@
   color: #e5e5e5;
   display: flex;
   justify-content: space-between;
-  /* background-color: transparent; */
+  background-color: transparent;
   align-items: center;
   padding: 12px 40px;
   position: sticky;
@@ -24,7 +24,7 @@
 
 .nav-left li {
   cursor: pointer;
-  font-size: 14px;
+  font-size: 10px;
   transition: color 0.2s ease-in;
 }
 

@@ -13,7 +13,7 @@ const Header = () => {
               <nav className ="navbar transparent">
             <div className ="nav-left">
             <ul>
-                <li><img src={NetflixLogo} width="95" alt="Netflix Logo" /></li>
+                <li><img src={NetflixLogo} width="70" alt="Netflix Logo" /></li>
                 <li>Home</li>
                 <li>TV Shows</li>
                 <li>Movies</li>

@@ -1,0 +1,63 @@
+.row {
+  margin: 0;              /* remove top/bottom margin */
+  padding: 0 20px;        /* optional horizontal padding */
+  color: white;
+}
+
+
+.row h2 {
+ .row h2 {
+  color: white;           /* make sure title is visible */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 10px 0;         /* spacing between title and posters */
+}
+
+}
+
+/* Container for posters */
+.row-posters {
+  display: flex;              /* Horizontal row */
+  overflow-x: scroll;         /* Scroll if too wide */
+  padding: 20px 0;
+  gap: 10px;                  /* Space between images */
+}
+
+/* Hide scrollbar (optional) */
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual poster */
+.row-poster {
+  max-height: 120px;
+  object-fit: contain;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.row-poster:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* Large poster for Netflix Originals */
+.row-postersLarge .row-poster {
+  max-height: 250px;
+}
+
+.row-postersLarge .row-poster:hover {
+  transform: scale(1.09);
+}
+
+/* For stacked column layout (if you want all posters in one column) */
+.row-posters-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: scroll;
+  max-height: 600px;  /* optional height for scrolling */
+}
+.row-posters-column::-webkit-scrollbar {
+  display: none;
+}
