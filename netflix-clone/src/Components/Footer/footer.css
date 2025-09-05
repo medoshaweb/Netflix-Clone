@@ -15,15 +15,18 @@
 /* Social Icons */
 .nf-social {
   margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  
 }
 .nf-social a {
-  color: #737373;
+  color: white;
   margin-right: 20px;
   font-size: 1.2rem;
   transition: color 0.3s;
 }
 .nf-social a:hover {
-  color: #fff;
+  color: #e50914;
 }
 
 /* Link Grid */
