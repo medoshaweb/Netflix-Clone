@@ -4,12 +4,16 @@
   color: #e5e5e5;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
+  /* background-color: transparent; */
   align-items: center;
   padding: 12px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+.transparent {
+  background-color: transparent !important;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* Left Navigation */
