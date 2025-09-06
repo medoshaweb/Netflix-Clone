@@ -2,7 +2,7 @@ import React, { useEffect, useState  } from 'react'
 import { truncate } from '../../utils/truncate';
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import axios from '../../utils/axios';
-import requests from '../../utils/requests';
+// import requests from '../../utils/requests';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 import './banner.css';
