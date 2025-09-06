@@ -3,12 +3,13 @@ import Header from '../../Components/Header/Header.jsx'
 import Banner from '../../Components/Banner/Banner.jsx'
 import Footer from '../../Components/Footer/Footer.jsx'
 import RowList from '../../Components/Rows/RowList/RowList.jsx'
+import requests from '../../utils/requests.jsx'
 
 const Home = () => {
   return (
     <>
     <Header />
-    <Banner />
+    <Banner fetchUrl={requests.fetchTopRatedMovies} />
     <RowList />
     <Footer />
     </>

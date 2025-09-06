@@ -1,9 +1,13 @@
 .row {
-  margin: 0;              /* remove top/bottom margin */
-  padding: 0 20px;        /* optional horizontal padding */
+  margin: 20px 0;           /* spacing between rows */         
   color: white;
+  
 }
 
+.row-scroll-buttons {
+  position: relative;
+ 
+}
 
 .row h2 {
  .row h2 {
@@ -18,9 +22,12 @@
 /* Container for posters */
 .row-posters {
   display: flex;              /* Horizontal row */
-  overflow-x: scroll;         /* Scroll if too wide */
+  overflow-x: auto;         /* Enable horizontal scrolling */
+  overflow-y: hidden;       /* Hide vertical scrollbar */
   padding: 20px 0;
   gap: 10px;                  /* Space between images */
+  scroll-behavior: smooth;  /* Smooth scrolling */
+  scrollbar-width: none;    /* Hide scrollbar for Firefox */
 }
 
 /* Hide scrollbar (optional) */
@@ -30,20 +37,22 @@
 
 /* Individual poster */
 .row-poster {
-  max-height: 120px;
+  width: 160px;               /* Full width of container */
+  max-height: 100px;
   object-fit: contain;
-  transition: transform 0.2s;
+  transition: transform 450ms;
   cursor: pointer;
 }
 
 .row-poster:hover {
   transform: scale(1.08);
-  opacity: 1;
+  
 }
 
 /* Large poster for Netflix Originals */
-.row-postersLarge .row-poster {
+.row-postersLarge  {
   max-height: 250px;
+  width:200px;
 }
 
 .row-postersLarge .row-poster:hover {
@@ -60,4 +69,32 @@
 }
 .row-posters-column::-webkit-scrollbar {
   display: none;
+}
+.row_arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 12px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.2s;
+}
+.row-scroll-buttons:hover .row_arrow {
+  opacity: 1;
+}
+.row_arrow.left {
+  left: 0;
+}
+
+.row_arrow.right {
+  right: 0;
+}
+.row_arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }

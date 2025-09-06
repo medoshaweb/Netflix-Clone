@@ -36,12 +36,17 @@
 
 .nav-left li {
   cursor: pointer;
-  font-size: 10px;
+  font-size: 12px;
   transition: color 0.2s ease-in;
 }
 
 .nav-left li:hover {
   color: #fff;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 /* Right Navigation */
@@ -55,7 +60,7 @@
 }
 
 .nav-right li {
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
   transition: color 0.2s ease-in;
 }
@@ -64,29 +69,6 @@
   color: #fff;
 }
 
-/* Search Box */
-.nav-right input[type="text"] {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
-  outline: none;
-  font-size: 14px;
-}
-
-.nav-right button {
-  background-color: #e50914; /* Netflix red */
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.3s;
-}
-
-.nav-right button:hover {
-  background-color: #f40612;
-}
 
 /* Notifications & Profile */
 .notifications,
@@ -118,4 +100,5 @@
   .nav-right button {
     width: 100%;
   }
+}
 }

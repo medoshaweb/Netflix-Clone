@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 import SearchIcon from "@mui/icons-material/Search";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";;
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import NetflixLogo from "../../assets/images/netflix_logo_icon.png";
@@ -30,20 +30,16 @@ const Header = () => {
         <div className="nav-right">
           <ul>
             <li>
-              {" "}
               <SearchIcon />
             </li>
             <li>Kids</li>
             <li>
-              {" "}
               <NotificationsNoneIcon />
             </li>
             <li>
-              {" "}
               <AccountBoxIcon />
             </li>
             <li>
-              {" "}
               <ArrowDropDownIcon />
             </li>
           </ul>
