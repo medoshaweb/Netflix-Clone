@@ -14,10 +14,9 @@ const Banner = ({ fetchUrl }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-       
-      const request = await axios.get(fetchUrl);
-      const results = request.data.results;
-      if (results && results.length > 0) {
+        const request = await axios.get(fetchUrl);
+        const results = request.data.results;
+        if (results && results.length > 0) {
         
           setMovie(results[Math.floor(Math.random() * results.length)]);
          return; // Exit the function after setting a valid movie
@@ -30,23 +29,24 @@ const Banner = ({ fetchUrl }) => {
     fetchData();
   }, [fetchUrl]);
 
-  const handleClick = (movie) => {
-    if (!movie) return; // Guard clause for undefined movie
+  const handleClick = async (movie) => {
+   
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movieTrailer(movie?.name || movie?.title || movie?.original_name || movie?.original_title || "")
-        .then((url) => {
-          if (url) {
-            const urlParams = new URLSearchParams(new URL(url).search);
-            setTrailerUrl(urlParams.get("v"));
-          } else {
-            console.log("Trailer not found", movie);
-          }
-        })
-        .catch((error) => console.log(error));
+      try {
+        const url = await movieTrailer(movie?.name || movie?.title || movie?.original_name || movie?.original_title || "");
+        if (url) {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v"));
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
+
+  
   
   return (
     
@@ -56,7 +56,7 @@ const Banner = ({ fetchUrl }) => {
     backgroundImage: movie
       ? `url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")`
       : "linear-gradient(to right, #000000, #434343)", // Fallback gradient if movie is null
-      minHeight: "448px",
+    minHeight: "448px",
   }}
 >
       <div className="banner-contents">
