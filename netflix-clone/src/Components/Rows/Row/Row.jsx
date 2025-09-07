@@ -20,7 +20,6 @@ const Row = ({ title, fetchUrl, isLargeRow=false }) => {
       try {
         const request = await axios.get(fetchUrl);
         setMovies(request.data.results);
-        // return request;
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -36,20 +35,19 @@ const Row = ({ title, fetchUrl, isLargeRow=false }) => {
     }
   };
 
-  const handleClick = (movie) => {
+  const handleClick = async(movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movieTrailer(movie?.name || movie?.title || movie?.original_name || movie?.original_title || "")
-        .then((url) => {
-          if (url) {
-            const urlParams = new URLSearchParams(new URL(url).search);
-            setTrailerUrl(urlParams.get("v"));
-          }else{
-            console.log("Trailer not found");
-          }
-        })
-        .catch((error) => console.log(error));
+      try {
+        const url = await movieTrailer(movie?.name || movie?.title || movie?.original_name || movie?.original_title || "");
+        if (url) {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v"));
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
   return (
@@ -61,7 +59,6 @@ const Row = ({ title, fetchUrl, isLargeRow=false }) => {
         </button>
       
       <div className="row-posters" ref={rowRef}>
-        {/* <div className={`row-posters ${isLargeRow && "row-postersLarge"}`}> */}
         {movies.map((movie) => (
           <img
             key={movie.id}
@@ -87,7 +84,7 @@ const Row = ({ title, fetchUrl, isLargeRow=false }) => {
       {trailerUrl && (
         <YouTube
           videoId={trailerUrl}
-          opts={{ height: "390", width: "100%", playerVars: { autoplay: 1 } }}
+          opts={{ height: "390", width: "100%", playerVars: { autoplay: 1, rel: 0 } }}
         />
       )}
     </div>
