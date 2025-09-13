@@ -33,11 +33,11 @@
 /* Hide scrollbar (optional) */
 .row-posters::-webkit-scrollbar {
   display: none;
-}
+ } 
 
 /* Individual poster */
 .row-poster {
-  width: 160px;               /* Full width of container */
+  width: 180px;               /* Full width of container */
   max-height: 100px;
   object-fit: contain;
   transition: transform 450ms;
@@ -51,8 +51,8 @@
 
 /* Large poster for Netflix Originals */
 .row-postersLarge  {
-  max-height: 250px;
-  width:200px;
+  max-height: 300px;
+  width:160px;
 }
 
 .row-postersLarge .row-poster:hover {
