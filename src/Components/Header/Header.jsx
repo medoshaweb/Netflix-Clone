@@ -7,6 +7,15 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import NetflixLogo from "../../assets/images/netflix_logo_icon.png";
 
 const Header = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavClick = (itemName) => {
+    console.log(`Clicked: ${itemName}`);
+    // You can add navigation logic here later
+  };
+
   return (
     <>
       <nav className="navbar transparent">
@@ -15,31 +24,31 @@ const Header = () => {
         </button>
         <div className="nav-left">
           <ul>
-            <li>
+            <li onClick={handleScrollToTop}>
               <img src={NetflixLogo} width="70" alt="Netflix Logo" />
             </li>
-            <li>Home</li>
-            <li>TV Shows</li>
-            <li>Movies</li>
-            <li>Games</li>
-            <li>New & Popular</li>
-            <li>My List</li>
-            <li>Browse by Language</li>
+            <li onClick={() => handleNavClick('Home')}>Home</li>
+            <li onClick={() => handleNavClick('TV Shows')}>TV Shows</li>
+            <li onClick={() => handleNavClick('Movies')}>Movies</li>
+            <li onClick={() => handleNavClick('Games')}>Games</li>
+            <li onClick={() => handleNavClick('New & Popular')}>New & Popular</li>
+            <li onClick={() => handleNavClick('My List')}>My List</li>
+            <li onClick={() => handleNavClick('Browse by Language')}>Browse by Language</li>
           </ul>
         </div>
         <div className="nav-right">
           <ul>
-            <li>
+            <li onClick={() => handleNavClick('Search')}>
               <SearchIcon />
             </li>
-            <li>Kids</li>
-            <li>
+            <li onClick={() => handleNavClick('Kids')}>Kids</li>
+            <li onClick={() => handleNavClick('Notifications')}>
               <NotificationsNoneIcon />
             </li>
-            <li>
+            <li onClick={() => handleNavClick('Account')}>
               <AccountBoxIcon />
             </li>
-            <li>
+            <li onClick={() => handleNavClick('Menu')}>
               <ArrowDropDownIcon />
             </li>
           </ul>
