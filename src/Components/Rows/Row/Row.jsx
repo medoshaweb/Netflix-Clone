@@ -1,9 +1,8 @@
-import React, { useState, useEffect, } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './row.css'
 import axios from '../../../utils/axios'
 import YouTube from 'react-youtube'
 import movieTrailer from 'movie-trailer'
-import { useRef } from 'react';
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
@@ -87,10 +86,9 @@ const Row = ({ title, fetchUrl, isLargeRow=false }) => {
           opts={{ height: "390", width: "100%", playerVars: { autoplay: 1, rel: 0 } }}
         />
       )}
+      </div>
     </div>
-  </div>
-);
-
+  );
 }
 
 export default Row

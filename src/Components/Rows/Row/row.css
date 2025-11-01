@@ -9,14 +9,11 @@
  
 }
 
-.row h2 {
- .row h2 {
+.row h3 {
   color: white;           /* make sure title is visible */
   font-size: 1.5rem;
   font-weight: 700;
   margin: 10px 0;         /* spacing between title and posters */
-}
-
 }
 
 /* Container for posters */
@@ -50,12 +47,12 @@
 }
 
 /* Large poster for Netflix Originals */
-.row-postersLarge  {
+.row-posterLarge  {
   max-height: 300px;
   width:160px;
 }
 
-.row-postersLarge .row-poster:hover {
+.row-posterLarge:hover {
   transform: scale(1.09);
 }
 

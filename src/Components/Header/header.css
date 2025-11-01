@@ -83,8 +83,9 @@
     align-items: flex-start;
     padding: 10px 20px;
   }
-.menu-toggle {
+  .menu-toggle {
     display: block;
+  }
 
   .nav-left ul,
   .nav-right ul {
@@ -100,5 +101,4 @@
   .nav-right button {
     width: 100%;
   }
-}
 }
