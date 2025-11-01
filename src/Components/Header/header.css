@@ -38,10 +38,16 @@
   cursor: pointer;
   font-size: 14px;
   transition: color 0.2s ease-in;
+  position: relative;
 }
 
 .nav-left li:hover {
   color: #fff;
+}
+
+.nav-left li.active {
+  color: #fff;
+  font-weight: 600;
 }
 .nav-right {
   display: flex;

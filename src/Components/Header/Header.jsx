@@ -5,15 +5,17 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import NetflixLogo from "../../assets/images/netflix_logo_icon.png";
+import { useNavigation } from '../../context/NavigationContext';
 
 const Header = () => {
+  const { selectedCategory, setSelectedCategory } = useNavigation();
+
   const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setSelectedCategory('Home');
   };
 
   const handleNavClick = (itemName) => {
-    console.log(`Clicked: ${itemName}`);
-    // You can add navigation logic here later
+    setSelectedCategory(itemName);
   };
 
   return (
@@ -27,13 +29,13 @@ const Header = () => {
             <li onClick={handleScrollToTop}>
               <img src={NetflixLogo} width="70" alt="Netflix Logo" />
             </li>
-            <li onClick={() => handleNavClick('Home')}>Home</li>
-            <li onClick={() => handleNavClick('TV Shows')}>TV Shows</li>
-            <li onClick={() => handleNavClick('Movies')}>Movies</li>
-            <li onClick={() => handleNavClick('Games')}>Games</li>
-            <li onClick={() => handleNavClick('New & Popular')}>New & Popular</li>
-            <li onClick={() => handleNavClick('My List')}>My List</li>
-            <li onClick={() => handleNavClick('Browse by Language')}>Browse by Language</li>
+            <li onClick={() => handleNavClick('Home')} className={selectedCategory === 'Home' ? 'active' : ''}>Home</li>
+            <li onClick={() => handleNavClick('TV Shows')} className={selectedCategory === 'TV Shows' ? 'active' : ''}>TV Shows</li>
+            <li onClick={() => handleNavClick('Movies')} className={selectedCategory === 'Movies' ? 'active' : ''}>Movies</li>
+            <li onClick={() => handleNavClick('Games')} className={selectedCategory === 'Games' ? 'active' : ''}>Games</li>
+            <li onClick={() => handleNavClick('New & Popular')} className={selectedCategory === 'New & Popular' ? 'active' : ''}>New & Popular</li>
+            <li onClick={() => handleNavClick('My List')} className={selectedCategory === 'My List' ? 'active' : ''}>My List</li>
+            <li onClick={() => handleNavClick('Browse by Language')} className={selectedCategory === 'Browse by Language' ? 'active' : ''}>Browse by Language</li>
           </ul>
         </div>
         <div className="nav-right">
