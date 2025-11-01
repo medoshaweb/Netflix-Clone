@@ -34,9 +34,9 @@
 
 /* Individual poster */
 .row-poster {
-  width: 180px;               /* Full width of container */
-  max-height: 100px;
-  object-fit: contain;
+  width: 240px;               /* Netflix standard width */
+  max-height: 135px;          /* Netflix standard height */
+  object-fit: cover;          /* Fill the space */
   transition: transform 450ms;
   cursor: pointer;
 }
@@ -48,8 +48,8 @@
 
 /* Large poster for Netflix Originals */
 .row-posterLarge  {
-  max-height: 300px;
-  width:160px;
+  max-height: 250px;          /* Netflix originals height */
+  width: 175px;               /* Netflix originals width */
 }
 
 .row-posterLarge:hover {
